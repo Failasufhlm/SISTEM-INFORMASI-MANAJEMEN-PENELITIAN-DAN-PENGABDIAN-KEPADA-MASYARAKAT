@@ -28,4 +28,19 @@ class Proposal extends Model
     {
         return $this->hasMany(Review::class);
     }
+
+    public function progressReports()
+    {
+        return $this->hasMany(ProgressReport::class);
+    }
+
+    public function finalReports()
+    {
+        return $this->hasMany(FinalReport::class);
+    }
+
+    public function outputs()
+    {
+        return $this->hasMany(Output::class);
+    }
 }

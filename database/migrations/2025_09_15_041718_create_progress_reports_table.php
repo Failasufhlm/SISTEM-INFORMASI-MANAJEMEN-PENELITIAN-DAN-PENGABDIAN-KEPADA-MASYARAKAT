@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('progress_reports', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('proposal_id')->constrained('proposals')->cascadeOnDelete();
+            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
+            $table->string('file_path');
+            $table->text('notes')->nullable();
             $table->timestamps();
         });
     }

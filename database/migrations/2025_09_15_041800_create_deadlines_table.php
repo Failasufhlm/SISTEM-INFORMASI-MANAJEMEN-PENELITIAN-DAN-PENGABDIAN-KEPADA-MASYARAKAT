@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('deadlines', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->dateTime('start_at')->nullable();
+            $table->dateTime('end_at')->nullable();
             $table->timestamps();
         });
     }
